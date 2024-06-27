@@ -1,0 +1,23 @@
+{
+  "name": "alx-backend-javascript",
+  "version": "1.0.0",
+  "description": "Project setup with Jest, Babel, and ESLint",
+  "main": "index.js",
+  "scripts": {
+    "lint": "./node_modules/.bin/eslint",
+    "check-lint": "lint [0-9]*.js",
+    "dev": "npx babel-node",
+    "test": "jest",
+    "full-test": "./node_modules/.bin/eslint [0-9]*.js && jest"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/cli": "^7.15.7",
+    "@babel/core": "^7.15.8",
+    "@babel/node": "^7.15.8",
+    "@babel/preset-env": "^7.15.8",
+    "eslint": "^7.32.0",
+    "jest": "^27.2.5"
+  }
+}
+
