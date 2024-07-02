@@ -1,7 +1,7 @@
 // get list of students
 
 export default function getListStudentIds(arr) {
-  if (!Array.isArray(arr)) {
+  if (arr instanceof Array) {
     return [];
   }
   return arr.map((std) => std.id);
