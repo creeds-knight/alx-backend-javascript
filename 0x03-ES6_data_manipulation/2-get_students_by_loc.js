@@ -1,7 +1,8 @@
-// 2-get_students_by_loc.js
+// get students by location
 
-function getStudentsByLocation(students, city) {
-  return students.filter((student) => student.location === city);
+export default function getStudentsByLocation(arr, city) {
+  if (!Array.isArray(arr) || typeof city !== 'string') {
+    return [];
+  }
+  return arr.filter((std) => std.location === city);
 }
-
-export default getStudentsByLocation;
