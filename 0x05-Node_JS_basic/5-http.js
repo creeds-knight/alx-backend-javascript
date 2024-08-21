@@ -1,11 +1,10 @@
 const http = require('http');
-const fs = require('fs');
 
 const port = 1245;
 const host = 'localhost';
 const filepath = process.argv.length > 2 ? process.argv[2] : '';
+const fs = require('fs');
 
-// Function to count students
 const countStudents = (filepath) => new Promise((resolve, reject) => {
   fs.readFile(filepath, 'utf-8', (err, data) => {
     if (err) {
@@ -46,15 +45,13 @@ const countStudents = (filepath) => new Promise((resolve, reject) => {
 
     let result = `Number of students: ${lstStudents.length}\n`;
     for (const [field, firstnames] of Object.entries(studentCountByField)) {
-      result += `Number of students in ${field}: ${firstnames.length}. List:
-      ${firstnames.join(', ')}\n`;
+      result += `Number of students in ${field}: ${firstnames.length}. List: ${firstnames.join(', ')}\n`;
     }
 
     resolve(result.trim());
   });
 });
 
-// Create the HTTP server
 const app = http.createServer(async (req, res) => {
   res.setHeader('Content-Type', 'text/plain');
 
