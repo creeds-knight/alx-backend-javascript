@@ -1,7 +1,7 @@
 // reading a file synchronoulsy using node js
 const fs = require('fs');
 
-function countStudents (filepath) {
+function countStudents(filepath) {
   if (!fs.existsSync(filepath)) {
     throw new Error('Cannot load the database');
   }
@@ -21,14 +21,14 @@ function countStudents (filepath) {
 
   const lstStudents = [];
   const studentCountByField = {};
-  for (let i = 1; i < readlines.length; i++) {
+  for (let i = 1; i < readlines.length; i += 1) {
     const line = readlines[i];
     const values = line.split(',');
     const student = {
       firstname: values[0],
       lastname: values[1],
       age: values[2],
-      field: values[3]
+      field: values[3],
     };
     lstStudents.push(student);
     if (!studentCountByField[student.field]) {
