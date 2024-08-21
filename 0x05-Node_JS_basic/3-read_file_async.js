@@ -11,7 +11,7 @@ const countStudents = (filepath) => new Promise((resolve, reject) => {
         .toString('utf8')
         .trim()
         .split('\n')
-        .map(item => item.replace('\r', ''));
+        .map((item) => item.replace('\r', ''));
 
       if (readlines.length === 0) {
         reject(new Error('Cannot load the database'));
@@ -21,15 +21,14 @@ const countStudents = (filepath) => new Promise((resolve, reject) => {
       const lstStudents = [];
       const studentCountByField = {};
 
-      for (let i = 1; i < readlines.length; i++) {
+      for (let i = 1; i < readlines.length; i += 1) {
         const line = readlines[i];
-        if (line === '') continue;
         const values = line.split(',');
         const student = {
           firstname: values[0],
           lastname: values[1],
           age: values[2],
-          field: values[3]
+          field: values[3],
         };
         lstStudents.push(student);
 
