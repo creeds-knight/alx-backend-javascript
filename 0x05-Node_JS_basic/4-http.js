@@ -1,3 +1,4 @@
+// creating a basic http server in node js
 const http = require('http');
 const port = 1245;
 const host = 'localhost';
@@ -15,4 +16,3 @@ app.listen(port, host, () => {
 });
 
 module.exports = app;
-
