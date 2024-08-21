@@ -3,15 +3,15 @@ const port = 1245;
 const host = 'localhost';
 
 const app = http.createServer((req, res) => {
-    textResponse = "Hello Holberton School!";
-    res.setHeader('Content-Type', 'text/plain');
-    res.setHeader('Content-Length', textResponse.length);
-    res.statusCode = 200;
-    res.end(textResponse)
-})
+  const textResponse = 'Hello Holberton School!';
+  res.setHeader('Content-Type', 'text/plain');
+  res.setHeader('Content-Length', textResponse.length);
+  res.statusCode = 200;
+  res.end(textResponse);
+});
 
 app.listen(port, host, () => {
-    console.log(`Server running at http://${host}:${port}`)
-})
+  console.log(`Server running at http://${host}:${port}`);
+});
 
 module.exports = app;
