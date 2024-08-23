@@ -67,7 +67,7 @@ const app = http.createServer(async (req, res) => {
       const studentsData = await countStudents(filepath);
       responseText += studentsData;
     } catch (error) {
-      responseText = 'Cannot load the database';
+      responseText += error.message;
       res.statusCode = 500;
     }
 
