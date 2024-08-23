@@ -66,11 +66,12 @@ app.get('/students', (req, res) => {
   countStudents(filepath)
     .then((response) => {
       responseText += response;
+      res.statusCode = 200;
       res.send(responseText);
     })
-    .catch(() => {
-      responseText = 'Cannot load the database';
-      res.statusCode = 500;
+    .catch((err) => {
+      responseText += err.toString();
+      res.statusCode = 200;
       res.send(responseText);
     });
 });
