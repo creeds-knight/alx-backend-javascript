@@ -70,7 +70,7 @@ app.get('/students', (req, res) => {
       res.send(responseText);
     })
     .catch((err) => {
-      responseText += err.toString();
+      responseText += err.message;
       res.statusCode = 200;
       res.send(responseText);
     });
